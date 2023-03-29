@@ -3,6 +3,7 @@ import styled from 'styled-components';
 interface TextProps {
     color?: string;
     marginLeft?: string;
+    marginRight?: string;
 }
 
 export const Container = styled.div`
@@ -38,4 +39,5 @@ export const Text = styled.p<TextProps>`
 
     ${({ color }) => color ? `color: ${color};` : ''}
     ${({ marginLeft }) => marginLeft ? `margin-left: ${marginLeft};` : ''}
+    ${({ marginRight }) => marginRight ? `margin-right: ${marginRight};` : ''}
 `;
