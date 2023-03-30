@@ -13,7 +13,6 @@ export const Container = styled.div`
     height: 38px;
     left: 0px;
     top: 0px;
-    border: solid 1px red;
     display: flex;
     justify-content: space-between;
 `;
@@ -29,7 +28,6 @@ export const ContentContainer = styled.div`
 `;
 
 export const Text = styled.p<TextProps>`
-    font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

@@ -7,23 +7,29 @@ interface ButtonProps {
     onClick?: () => void;
     backgroundColor?: string;
     color?: string;
+    marginTop?: string;
+    icon?: React.ReactElement;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  text,
-  onClick,
-  backgroundColor,
-  color,
-}) => {
-  return (
-    <StyledButton
-      onClick={onClick}
-      backgroundColor={backgroundColor}
-      color={color}
-    >
-      {text}
-    </StyledButton>
-  );
+const Button = ({
+    text,
+    onClick,
+    backgroundColor,
+    color,
+    marginTop,
+    icon
+}: ButtonProps) => {
+    return (
+        <StyledButton
+            onClick={onClick}
+            backgroundColor={backgroundColor}
+            color={color}
+            marginTop={marginTop}
+        >
+            {text}
+            {Boolean(icon) && icon}
+        </StyledButton>
+    );
 };
 
 export default Button;
