@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 import rightArrow from '../../../../images/right_arrow.svg';
 import carouselImage from '../../../../images/carousel_1.svg';
 
-import Button from '../../../components/button';
-import Carousel from '../../../components/carousel';
+import Button from '../../../../components/button';
+import Carousel from '../../../../components/carousel';
 
 import { Container, Title, ContentContainer, Subtitle, Option } from './styles';
 

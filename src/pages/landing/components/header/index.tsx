@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import textLogo from '../../../../images/text_logo.svg';
-import Button from '../../../components/button';
+import Button from '../../../../components/button';
 
 import { Container, Logo, ContentContainer, Text } from './styles';
-import { listCoins } from '../../../../services/coins_service';
 
 interface CoinProps {
     name: string;
@@ -24,10 +23,6 @@ const Coin = ({ name, value, variation }: CoinProps) => {
 }
 
 const Header = () => {
-    useEffect(() => {
-        listCoins();
-    }, [])
-
     return (
         <Container>
             <ContentContainer>
