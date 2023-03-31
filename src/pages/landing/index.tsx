@@ -9,6 +9,7 @@ import SignUpNowSmall from './components/sign_up_now_small';
 import ProductInfo from './components/product_info';
 import Table from '../../components/table';
 import Newsletter from './components/newsletter';
+import Footer from './components/footer';
 
 import { SeparatorContainer, ContentContainer, Row } from './styles';
 import { listCoins } from '../../services/coins_service';
@@ -77,6 +78,7 @@ const LandingPage = () => {
             </Row>
             <Table columns={columns} data={data} />
             <Newsletter />
+            <Footer />
         </div>
     );
 }

@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-import backgroundSvg from '../../../../images/newsletter_background.svg';
-
 export const Container = styled.div`
     position: realtive;
     width: calc(100vw);
@@ -14,6 +12,7 @@ export const Container = styled.div`
         height: auto;
         margin: 0 auto;
         position: absolute;
+        z-index: 9;
     }
 
     overflow: hidden;
@@ -24,6 +23,7 @@ export const ContentContainer = styled.div`
     display: flex;
     flex-direction: row;
     padding: 120px 216px;
+    justify-content: space-between;
 `;
 
 export const Title = styled.p`

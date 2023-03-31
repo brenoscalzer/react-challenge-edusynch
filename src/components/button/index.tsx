@@ -8,6 +8,8 @@ interface ButtonProps {
     backgroundColor?: string;
     color?: string;
     marginTop?: string;
+    width?: string;
+    height?: string;
     icon?: React.ReactElement;
 }
 
@@ -17,7 +19,9 @@ const Button = ({
     backgroundColor,
     color,
     marginTop,
-    icon
+    icon,
+    width,
+    height
 }: ButtonProps) => {
     return (
         <StyledButton
@@ -25,6 +29,8 @@ const Button = ({
             backgroundColor={backgroundColor}
             color={color}
             marginTop={marginTop}
+            width={width}
+            height={height}
         >
             {text}
             {Boolean(icon) && icon}

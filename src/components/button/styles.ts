@@ -4,6 +4,8 @@ interface ButtonProps {
     backgroundColor?: string;
     color?: string;
     marginTop?: string;
+    width?: string;
+    height?: string;
 }
   
 export const StyledButton = styled.button<ButtonProps>`
@@ -16,10 +18,14 @@ export const StyledButton = styled.button<ButtonProps>`
     cursor: pointer;
     height: 32px;
     margin-top: 3px;
-    display: flex;
     align-items: center;
+    text-align: center;
+    z-index: 99999;
+    position: relative;
     
     ${({ marginTop }) => marginTop ? `margin-top: ${marginTop};` : ''}
+    ${({ width }) => width ? `width: ${width};` : ''}
+    ${({ height }) => height ? `height: ${height};` : ''}
 
     img {
         margin-left: 10px;
