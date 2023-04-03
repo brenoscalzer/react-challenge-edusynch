@@ -2,12 +2,13 @@ import React from "react";
 
 import { TableContainer, TableHead, TableHeadRow, TableHeadCell, TableBody, TableRow, TableCell } from './styles';
 
-interface TableProps {
+interface TableProps<T> {
   columns: { key: string; label: string }[];
-  data: { [key: string]: string | React.ReactElement }[];
+  data: T[];
+  renderCell: (object: T, column: string) => React.ReactElement;
 }
 
-const Table = ({ columns, data }: TableProps) => {
+const Table = <T,>({ columns, data, renderCell }: TableProps<T>) => {
   return (
     <TableContainer>
       <TableHead>
@@ -22,7 +23,7 @@ const Table = ({ columns, data }: TableProps) => {
           <TableRow key={rowIndex}>
             {columns.map((column, columnIndex) => (
               <TableCell key={`${rowIndex}-${columnIndex}`}>
-                {row[column.key]}
+                {renderCell(row, column.key)}
               </TableCell>
             ))}
           </TableRow>

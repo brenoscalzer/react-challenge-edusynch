@@ -32,3 +32,24 @@ export const Row = styled.div`
     padding: 120px 112px;
 `;
 
+export const TableTitle = styled.p`
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #5D6670;
+`;
+
+export const TableSizeText = styled.p`
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FBAB34;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+`
+

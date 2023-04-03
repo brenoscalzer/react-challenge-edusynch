@@ -11,30 +11,28 @@ import Table from '../../components/table';
 import Newsletter from './components/newsletter';
 import Footer from './components/footer';
 
-import { SeparatorContainer, ContentContainer, Row } from './styles';
+import { SeparatorContainer, ContentContainer, Row, TableTitle, TableSizeText } from './styles';
 import { listCoins } from '../../services/coins_service';
 import { Coin } from '../../utils/types/coin';
+import { renderCell } from './components/table_cell';
 
 const columns = [
     {key: 'position', label: '#'},
-    {key: 'name', label: 'Crypto'},
+    {key: 'crypto', label: 'Crypto'},
     {key: 'price', label: 'Price'},
     {key: 'change', label: 'Change'},
-]
-
-const data = [
-    { position: '01', name: 'Bitcoin BTC', price: 'US$ 25.499,52', change: '+5,65%' },
-    { position: '02', name: 'Ethereum ETH', price: 'US$ 25.499,52', change: '-5,65%' },
-]
+    {key: 'trade', label: 'Trade'},
+];
 
 const LandingPage = () => {
-    const [coins, setCoins] = useState<Coin[]>([])
+    const [coins, setCoins] = useState<Coin[]>([]);
+    const [tableSize, setTableSize] = useState(4);
 
     useEffect(() => {
         listCoins().then((res) => {
           setCoins(res);
         });
-    }, [])
+    }, []);
 
     return (
         <div style={{ overflowX: 'hidden', width: '100vw' }}>
@@ -76,7 +74,9 @@ const LandingPage = () => {
                 </div>
                 <SignUpNowSmall />
             </Row>
-            <Table columns={columns} data={data} />
+            <TableTitle>Top Cryptos</TableTitle>
+            <Table columns={columns} data={coins.slice(0, tableSize)} renderCell={renderCell} />
+            <TableSizeText onClick={() => setTableSize(tableSize === 4 ? 10 : 4)}>{tableSize === 4 ? 'View more +' : 'View less'}</TableSizeText>
             <Newsletter />
             <Footer />
         </div>
